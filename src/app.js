@@ -5,3 +5,7 @@ function print(msg) {
 }
 
 print(require('./sync-message'));
+
+require.ensure([], function () {
+    print(require('./async-message'));
+}, 'async-chunk');

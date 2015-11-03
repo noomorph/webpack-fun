@@ -13,6 +13,7 @@ module.exports = {
         loaders: [{
             test: /\.js$/,
             loader: 'babel',
+            include: path.resolve(__dirname, 'src'),
         }],
     },
 };

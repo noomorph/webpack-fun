@@ -1,9 +1,4 @@
-function print(msg) {
-    var el = document.createElement('p');
-    el.textContent = msg;
-    document.body.appendChild(el);
-}
-
+import print from './util/print';
 print(require('./sync-message'));
 
 require.ensure([], function () {

@@ -1,19 +1,22 @@
 var path = require('path');
-var webpack = require('webpack');
+var src = path.resolve(__dirname, 'src')
 
 module.exports = {
     // NOTE: absolute path is important for live reload
-    context: path.resolve(__dirname, 'src'),
+    context: src,
     entry: "./app.js",
     output: {
         path: './dist',
         filename: '[name].js'
     },
+    resolve: {
+        root: src,
+    },
     module: {
         loaders: [{
             test: /\.js$/,
             loader: 'babel',
-            include: path.resolve(__dirname, 'src'),
+            include: src,
         }],
     },
 };

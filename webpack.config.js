@@ -1,5 +1,6 @@
 var path = require('path');
 var src = path.resolve(__dirname, 'src')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // NOTE: absolute path is important for live reload
@@ -19,4 +20,10 @@ module.exports = {
             include: src,
         }],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(src, 'index.html'),
+            inject: 'body',
+        })
+    ]
 };

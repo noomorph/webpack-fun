@@ -21,13 +21,6 @@ module.exports = {
         }, {
             test: /\.css$/,
             loader: 'style!css',
-        }, {
-            test: /\.(txt|xml|png|ico)$/,
-            loader: 'file-loader',
-            query: {
-                name: '[path][name].[ext]',
-            },
-            include: src,
         }],
     },
     plugins: [

@@ -1,6 +1,8 @@
 var path = require('path');
 var src = path.resolve(__dirname, 'src')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var PRODUCTION = process.env.PRODUCTION;
 
 module.exports = {
     // NOTE: absolute path is important for live reload
@@ -20,18 +22,20 @@ module.exports = {
             include: src,
         }, {
             test: /\.css$/,
-            loader: 'style!css',
+            loader: PRODUCTION ? ExtractTextPlugin.extract('style-loader', 'css') : 'style!css',
         }],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(src, 'index.html'),
             inject: 'body',
-            googleAnalyticsID: process.env.PRODUCTION && 'UA-12345-12'
+            googleAnalyticsID: PRODUCTION && 'UA-12345-12'
         }),
         new HtmlWebpackPlugin({
             filename: '404.html',
             template: path.join(src, '404.html')
         }),
-    ]
+    ].concat(PRODUCTION ? [
+        new ExtractTextPlugin("main.css")
+    ] : []),
 };

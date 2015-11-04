@@ -1,0 +1,6 @@
+{
+  "ecmaFeatures": {
+    "es6": true,
+    "modules": true
+  }
+}

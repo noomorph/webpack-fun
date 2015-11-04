@@ -18,6 +18,9 @@ module.exports = {
             test: /\.js$/,
             loader: 'babel',
             include: src,
+        }, {
+            test: /\.css$/,
+            loader: 'style!css',
         }],
     },
     plugins: [

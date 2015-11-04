@@ -27,6 +27,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(src, 'index.html'),
             inject: 'body',
+            googleAnalyticsID: process.env.PRODUCTION && 'UA-12345-12'
         })
     ]
 };

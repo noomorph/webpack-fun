@@ -28,6 +28,10 @@ module.exports = {
             template: path.join(src, 'index.html'),
             inject: 'body',
             googleAnalyticsID: process.env.PRODUCTION && 'UA-12345-12'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: '404.html',
+            template: path.join(src, '404.html')
+        }),
     ]
 };

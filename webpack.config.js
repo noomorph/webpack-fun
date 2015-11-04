@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // NOTE: absolute path is important for live reload
     context: src,
-    entry: "./app.js",
+    entry: "./js/main.js",
     output: {
         path: './dist',
         filename: '[name].js'

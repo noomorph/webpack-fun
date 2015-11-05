@@ -7,7 +7,7 @@ var PRODUCTION = process.env.PRODUCTION;
 module.exports = {
     // NOTE: absolute path is important for live reload
     context: src,
-    entry: "./app.js",
+    entry: "./other.js",
     output: {
         path: './dist',
         filename: '[name].js'

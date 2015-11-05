@@ -1,3 +1,3 @@
 define(function () {
-    return "Sync Message in AMD style";
+    return "Sync Message in AMD style NO";
 });
